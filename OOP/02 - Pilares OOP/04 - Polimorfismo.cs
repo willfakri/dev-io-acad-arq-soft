@@ -5,9 +5,11 @@
     {
         public CafeteiraEspressa(string nome, int voltagem)
             : base(nome, voltagem) { }
-
+                
         public CafeteiraEspressa()
             : base("Padrao", 220) {  }
+
+        
 
         private static void AquecerAgua() { }
 

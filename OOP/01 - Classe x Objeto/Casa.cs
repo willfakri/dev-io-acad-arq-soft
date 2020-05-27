@@ -2,7 +2,7 @@
 {
     // Definição de Classe
     public class Casa
-    {
+    {                
         public int TamanhoM2 { get; set; }
         public int Andares { get; set; }
         public decimal Valor { get; set; }
