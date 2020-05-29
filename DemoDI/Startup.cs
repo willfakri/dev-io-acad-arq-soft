@@ -18,7 +18,7 @@ namespace DemoDI
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
-        {
+        {   
             #region Lifecycle
 
             services.AddTransient<IOperacaoTransient, Operacao>();
@@ -64,9 +64,10 @@ namespace DemoDI
 
             #endregion
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
         }
 
+        [Obsolete]
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseStaticFiles();
