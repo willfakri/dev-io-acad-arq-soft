@@ -3,7 +3,7 @@ using InjecaoDependenciaDotNetCore.Model;
 
 namespace InjecaoDependenciaDotNetCore.Repository
 {
-    public class ClienteRepository
+    public class ClienteRepository : IClienteRepository
     {
         public void AdicionarCliente(Cliente cliente)
         {

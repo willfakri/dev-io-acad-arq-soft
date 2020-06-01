@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
-using InjecaoDependenciaDotNetCore.Model;
 using InjecaoDependenciaDotNetCore.Business;
+using InjecaoDependenciaDotNetCore.Repository;
 
 namespace InjecaoDependenciaDotNetCore
 {
@@ -24,7 +24,8 @@ namespace InjecaoDependenciaDotNetCore
         {
             var services = new ServiceCollection();
             services.AddTransient<IClienteBusiness, ClienteBusiness>();
-            services.AddSingleton<ConsoleApp>();            
+            services.AddTransient<IClienteRepository, ClienteRepository>();
+            services.AddSingleton<ConsoleApp>();
             _serviceProvider = services.BuildServiceProvider(true);
         }
 
