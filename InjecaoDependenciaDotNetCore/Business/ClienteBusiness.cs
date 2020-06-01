@@ -4,8 +4,8 @@ using InjecaoDependenciaDotNetCore.Repository;
 
 namespace InjecaoDependenciaDotNetCore.Business
 {
-    public class ClienteBusiness
-    {
+    public class ClienteBusiness : IClienteBusiness
+    {        
         public void AdicionarCliente(Cliente cliente)
         {
             Console.WriteLine($"Info: ClienteBusiness.AdionarCliente({cliente.Nome})");

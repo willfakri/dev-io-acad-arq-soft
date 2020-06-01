@@ -6,12 +6,11 @@ namespace InjecaoDependenciaDotNetCore
 {
     class ConsoleApp
     {
-        //private readonly ICustomer _customer;
-        
-        //public ConsoleApp(ICustomer customer)
-        public ConsoleApp()
+        private readonly IClienteBusiness _clienteBusiness;
+                
+        public ConsoleApp(IClienteBusiness clienteBusiness)
         {
-            //_customer = customer;
+            _clienteBusiness = clienteBusiness;
         }
 
         public void Run()
@@ -19,10 +18,8 @@ namespace InjecaoDependenciaDotNetCore
             var cliente = new Cliente();
             Console.WriteLine("Digite o nome do cliente: ");
             cliente.Nome = Console.ReadLine();
-
-            var clienteBusiness = new ClienteBusiness();
-            clienteBusiness.AdicionarCliente(cliente);
-            //_customer.CreateCustomer(); 
+            
+            _clienteBusiness.AdicionarCliente(cliente);            
         }
     }
 }

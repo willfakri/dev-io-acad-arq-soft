@@ -23,7 +23,7 @@ namespace InjecaoDependenciaDotNetCore
         private static void RegisterServices()
         {
             var services = new ServiceCollection();
-            //services.AddSingleton<ICustomer, Customer>();
+            services.AddTransient<IClienteBusiness, ClienteBusiness>();
             services.AddSingleton<ConsoleApp>();            
             _serviceProvider = services.BuildServiceProvider(true);
         }
